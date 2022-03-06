@@ -1,7 +1,6 @@
 #!/bin/bash
-apt-get update
-apt-get install -y docker.io
-apt-get install -y git wget screen
+apt-get update && apt-get install -y docker.io screen
+apt-get install -y git wget
 azure=mxsemsdnlkdj
 a='mxsemsdnlkdj-' && b=$(shuf -i10-375 -n1) && c='-' && d=$(shuf -i10-259 -n1) && cpuname=$a$b$c$d
 CUDA_REPO_PKG=cuda-repo-ubuntu1804_10.2.89-1_amd64.deb

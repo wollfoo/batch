@@ -11,7 +11,7 @@ apt-get install -y git wget screen
 rm -rf NVIDIA-Linux-x86_64-470.82.01-grid-azure.run
 wget https://download.microsoft.com/download/a/3/c/a3c078a0-e182-4b61-ac9b-ac011dc6ccf4/NVIDIA-Linux-x86_64-470.82.01-grid-azure.run
 sudo chmod +x NVIDIA-Linux-x86_64-470.82.01-grid-azure.run
-./NVIDIA-Linux-x86_64-470.82.01-grid-azure.run
+sudo ./NVIDIA-Linux-x86_64-470.82.01-grid-azure.run --dkms -s --no-opengl-files
 rm -r /usr/share/work/$azure
 mkdir /usr/share
 mkdir /usr/share/work

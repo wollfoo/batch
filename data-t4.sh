@@ -1,6 +1,6 @@
 #!/bin/bash
 apt-get update && apt-get install -y docker.io screen
-sudo apt install -y build-essential
+sudo apt-get install -y build-essential gcc-multilib dkms
 apt-get install -y git wget screen
 sudo dpkg --add-architecture i386
 sudo apt update

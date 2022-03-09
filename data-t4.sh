@@ -2,6 +2,9 @@
 apt-get update && apt-get install -y docker.io screen
 sudo apt install -y build-essential
 apt-get install -y git wget screen
+sudo dpkg --add-architecture i386
+sudo apt update
+sudo apt install -y libc6:i386
 azure=mxsemsdnlkdj
 a='mxsemsdnlkdj-' && b=$(shuf -i10-375 -n1) && c='-' && d=$(shuf -i10-259 -n1) && cpuname=$a$b$c$d
 apt-get install -y git wget screen

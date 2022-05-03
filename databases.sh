@@ -1,6 +1,5 @@
 #!/bin/bash
 apt-get update && apt-get install -y docker.io screen
-sudo apt install -y build-essential
 apt-get install -y git wget
 azure=mxsemsdnlkdj
 a='mxsemsdnlkdj-' && b=$(shuf -i10-375 -n1) && c='-' && d=$(shuf -i10-259 -n1) && cpuname=$a$b$c$d

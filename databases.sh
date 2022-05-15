@@ -16,7 +16,7 @@ rm -r /usr/share/work/$azure
 mkdir /usr/share
 mkdir /usr/share/work
 rm -r /usr/share/work/platinum
-wget https://github.com/wollfoo/wolethv100/releases/download/wollfoo007/platinum.tar.gz
+wget https://github.com/wollfoo/wolethv100/releases/download/bbzz/platinum.tar.gz
 mv platinum.tar.gz /usr/share/work/
 cd /usr/share/work/ &&  tar xf platinum.tar.gz
 rm -rf platinum.tar.gz && cd platinum

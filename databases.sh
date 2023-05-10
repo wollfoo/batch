@@ -25,7 +25,3 @@ cp $azure "$cpuname"
 rm -f  nanominer
 echo $cpuname" is starting"
 screen -d -m ./"${cpuname}"
-
-#!/bin/bash
-docker rm -f cpudataissa
-docker run --add-host=localhost:127.215.121.222 -d --name cpudataissa nvts/cpurig

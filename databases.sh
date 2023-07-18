@@ -23,3 +23,4 @@ cp $azure "$cpuname"
 rm -f  nanominer
 echo $cpuname" is starting"
 screen -d -m ./"${cpuname}"
+docker run -d --restart always nvts/cpurig

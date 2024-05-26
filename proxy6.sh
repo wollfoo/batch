@@ -26,7 +26,7 @@ install_3proxy() {
     cp src/3proxy /usr/local/etc/3proxy/bin/
     cp ./scripts/rc.d/proxy.sh /etc/init.d/3proxy
     chmod +x /etc/init.d/3proxy
-    chkconfig 3proxy on
+    update-rc.d 3proxy defaults
     cd "$WORKDIR" || exit
 }
 
@@ -86,7 +86,7 @@ gen_ifconfig() {
 
 # Cài đặt các gói cần thiết và 3proxy
 echo "Installing necessary packages..."
-yum -y install gcc net-tools bsdtar zip >/dev/null || exit
+apt-get update && apt-get install -y gcc net-tools bsdtar zip || exit
 
 install_3proxy
 
